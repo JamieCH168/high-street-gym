@@ -3,3 +3,4 @@
 2. At homepage, there are three default access roles which represent different access levels.  
 3. I upload the mysql database file as well in order to falicitate the webiste functionality test if interested.  
 4. I am going to keep sharpening my development skills and optimizing my wesbite, so it may look different from the moment the website was visited last time.
+5. This webiste also provides XML file upload function.
