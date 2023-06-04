@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE room-upload [
+    <!ELEMENT room-upload (rooms)>
+    <!ATTLIST room-upload operation (insert|update) "insert">
+    <!ELEMENT rooms (room+)>
+    <!ELEMENT room (room_id?,room_location,room_number)>
+    <!ELEMENT room_id (#PCDATA)>
+    <!ELEMENT room_location (#PCDATA)>
+    <!ELEMENT room_number (#PCDATA)>
+]>
+<room-upload operation="insert">
+    <rooms>
+        <room>
+            <room_location>Area H</room_location>
+            <room_number>201</room_number>
+        </room>  
+        <room>
+            <room_location>Area G</room_location>
+            <room_number>202</room_number>
+        </room>  
+        <room>
+            <room_location>Area I</room_location>
+            <room_number>203</room_number>
+        </room>  
+    </rooms>
+</room-upload>
+
+<!-- Update version  
+<room-upload operation="update">
+    <rooms>
+        <room>
+            <room_id>16</room_id>
+            <room_location>Area B</room_location>
+            <room_number>204</room_number>
+        </room>
+        <room>
+            <room_id>17</room_id>
+            <room_location>Area B</room_location>
+            <room_number>205</room_number>
+        </room>
+        <room>
+            <room_id>18</room_id>
+            <room_location>Area B</room_location>
+            <room_number>205</room_number>
+        </room>
+    </rooms>
+</room-upload> -->

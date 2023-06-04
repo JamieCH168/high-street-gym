@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE activity-upload [
+    <!ELEMENT activity-upload (activities)>
+    <!ATTLIST activity-upload operation (insert|update) "insert">
+    <!ELEMENT activities (activity+)>
+    <!ELEMENT activity (activity_id?,activity_name,activity_description,activity_duration)>
+    <!ELEMENT activity_id (#PCDATA)>
+    <!ELEMENT activity_name (#PCDATA)>
+    <!ELEMENT activity_description (#PCDATA)>
+    <!ELEMENT activity_duration (#PCDATA)>
+]>
+
+<activity-upload operation="insert">
+    <activities>
+        <activity>
+            <activity_name>Pilates</activity_name>
+            <activity_description>
+Pilates is a form of exercise which concentrates on strengthening the body with an emphasis on core strength</activity_description>
+            <activity_duration>30 min</activity_duration>
+        </activity>  
+        <activity>
+            <activity_name>Indoor Cycling</activity_name>
+            <activity_description>cycling can help lose belly fat, but it will take time</activity_description>
+            <activity_duration>40 min</activity_duration>
+        </activity>  
+        <activity>
+            <activity_name>Boxing</activity_name>
+            <activity_description>
+Boxing is a combat sport in which two people</activity_description>
+            <activity_duration>50 min</activity_duration>
+        </activity>  
+    
+    </activities>
+</activity-upload>
+
+
+<!-- Update version  -->
+
+
+<!-- <activity-upload operation="update">
+    <activities>
+        <activity>
+        <activity_id>4</activity_id>
+        <activity_name>Pilates</activity_name>
+        <activity_description>Pilates is a form of exercise which concentrates on strengthening the body with an emphasis on core strength</activity_description>
+            <activity_duration>30 min</activity_duration>
+        </activity>  
+        <activity>
+        <activity_id>5</activity_id>
+        <activity_name>Indoor Cycling</activity_name>
+        <activity_description>cycling can help lose belly fat, but it will take time</activity_description>
+        <activity_duration>40 min</activity_duration>
+        </activity>  
+        <activity>
+        <activity_id>6</activity_id>
+        <activity_name>Boxing</activity_name>
+        <activity_description>Boxing is a combat sport in which two people</activity_description>
+        <activity_duration>50 min</activity_duration>
+        </activity>  
+    </activities>
+</activity-upload> -->
