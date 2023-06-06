@@ -194,6 +194,7 @@ function Homepage() {
                             {/* <h1 className="mb-10 text-5xl font-bold">Transform Your Life</h1> */}
                             <p className="text-4xl absolute" style={{ top: '40.5%', right: '28%' }} >Transform Your Life</p>
                             <button className="btn btn-primary rounded-full text-4xl"
+                              	style={{ backgroundColor: '#104de8' }}
                                 onClick={handleButtonClick}
                             >Get Started</button>
                         </div>

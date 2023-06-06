@@ -4,16 +4,17 @@ import Footer from '../components/Footer.jsx';
 
 const ContactUs = () => {
     return (
-        <div className="flex flex-col min-h-screen bg-blue-200">
+        <div className="flex flex-col min-h-screen bg-blue-200" style={{ backgroundImage: `url('/Blog_1.jpg')` ,
+        backgroundAttachment: 'fixed'}}>
 
             <Nav />
-            <h1 className="text-5xl font-bold my-6 text-center">Contact Us</h1>
-            <h2 className="text-3xl font-bold mb-6 text-center">Get in touch or find a gym location near you.</h2>
+            <h1 className="text-5xl font-bold my-6 text-center text-zinc-50">Contact Us</h1>
+            <h2 className="text-3xl font-bold mb-6 text-center text-zinc-50">Get in touch or find a gym location near you.</h2>
             <div
                 className="grow grid grid-flow-row lg:grid-flow-col justify-evenly items-center gap-8 my-6 w-8/12 mx-auto "
             >
                 <div className='flex flex-col gap-2 mx-auto items-center'>
-                    <div className="card w-96 bg-primary text-primary-content" style={{ backgroundColor: '#8a46a3' }}>
+                    <div className="card w-96 bg-primary text-primary-content" style={{ backgroundColor: 'rgb(190 138 46)' }}>
                         <div className="card-body">
                             <h2 className="card-title ">Enquiry form</h2>
                             <p>Complete an online enquiry form.</p>
@@ -22,7 +23,7 @@ const ContactUs = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="card w-96 bg-primary text-primary-content" style={{ backgroundColor: '#8a46a3' }}>
+                    <div className="card w-96 bg-primary text-primary-content" style={{ backgroundColor: 'rgb(70 163 102)' }}>
                         <div className="card-body">
                             <h2 className="card-title">1300 XXX XXX</h2>
                             <p>Give us a phone call.</p>
@@ -31,7 +32,7 @@ const ContactUs = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="card w-96 bg-primary text-primary-content" style={{ backgroundColor: '#8a46a3' }}>
+                    <div className="card w-96 bg-primary text-primary-content" style={{ backgroundColor: 'rgb(113 155 148)' }}>
                         <div className="card-body">
                             <h2 className="card-title">Webchat</h2>
                             <p>Chat online to our support team.</p>

@@ -44,14 +44,15 @@ export default function Blog_post() {
 		}
 	}
 	return (
-		<div className='flex flex-col min-h-screen bg-blue-200'>
+		<div className='flex flex-col min-h-screen bg-blue-200' style={{ backgroundImage: `url('/Blog_1.jpg')`,
+		backgroundAttachment: 'fixed' }}>
 			{showConfirm && <DeleteHandler
 				onDelete={deleteSelectedPost}
 				onCancel={cancelConfirmHandler}
 			></DeleteHandler>}
 			<Nav></Nav>
 			<ToolBar></ToolBar>
-			<h1 className="text-5xl font-bold my-6 text-center">Blog Post</h1>
+			<h1 className="text-5xl font-bold my-6 text-center text-zinc-50">Blog Post</h1>
 
 
 			<div className='mx-auto mb-6 '>
@@ -116,7 +117,7 @@ export default function Blog_post() {
 									className=" w-full xl:w-1/2 max-h-[400px] md:max-h-[600px] rounded-lg shadow-2xl bg-yellow-300 " />
 							) : null}
 
-							<div className="w-full xl:w-1/2 max-h-[400px] md:max-h-[600px]      lg: flex flex-col justify-between  mx-2  rounded p-2" style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)', backgroundColor: '#8a46a3' }}  >
+							<div className="w-full xl:w-1/2 max-h-[400px] md:max-h-[600px]      lg: flex flex-col justify-between  mx-2  rounded p-2" style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)', backgroundColor: '#9c9ea1' }}  >
 								<div>
 									<h1 className="text-3xl font-bold my-4 uppercase"> {post.post_title}</h1>
 									{user ? (

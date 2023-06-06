@@ -225,13 +225,14 @@ export default function classCRUD() {
 
 
   return (
-    <div className="flex flex-col min-h-screen  bg-emerald-100">
+    <div className="flex flex-col min-h-screen  bg-emerald-100" style={{ backgroundImage: `url('/Blog_1.jpg')` ,
+    backgroundAttachment: 'fixed'}}>
       {showConfirm && <DeleteHandler
         onDelete={deleteSelectedClass}
         onCancel={cancelConfirmHandler}
       ></DeleteHandler>}
       <Nav></Nav>
-      <h1 className="text-3xl lg:text-5xl font-bold my-6 text-center">Class CRUD</h1>
+      <h1 className="text-3xl lg:text-5xl font-bold my-6 text-center text-zinc-50">Class CRUD</h1>
 
       <div className="grow grid grid-cols-1 xl:grid-cols-1  justify-items-center w-8/12 mx-auto gap-4 pb-4">
         <div className="w-full overflow-auto rounded p-2" style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)' }}>

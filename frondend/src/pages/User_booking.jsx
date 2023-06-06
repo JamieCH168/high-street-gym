@@ -11,6 +11,7 @@ import Spinner from "../components/Spinner";
 import { useNavigate } from "react-router-dom";
 import DeleteHandler from "../components/DeleteHandler";
 import ToolBar from "../components/ToolBar";
+import homepage_picture from '../../public/Blog_1.jpg'
 
 export default function BookingInfo() {
   const [showConfirm, setShowConfirm] = useState(false);
@@ -73,7 +74,8 @@ export default function BookingInfo() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-blue-200">
+    <div className="flex flex-col min-h-screen bg-blue-200" style={{ backgroundImage: `url(${homepage_picture})`,
+    backgroundAttachment: 'fixed' }}>
       <Nav />
       <ToolBar></ToolBar>
       {showConfirm && (
@@ -82,7 +84,7 @@ export default function BookingInfo() {
           onCancel={cancelConfirmHandler}
         ></DeleteHandler>
       )}
-      <h1 className="text-3xl lg:text-5xl font-bold my-6 text-center">
+      <h1 className="text-3xl lg:text-5xl font-bold my-6 text-center text-zinc-50">
         Your Booking
       </h1>
       {bookings.length === 0 && (
@@ -106,14 +108,14 @@ export default function BookingInfo() {
             <span> Date:{booking.booking.booking_created_date}</span>
           </div>
           <div></div>
-          <div className="rounded p-2" style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)', backgroundColor: '#8a46a3'}}>
+          <div className="rounded p-2" style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)', backgroundColor: '#9c9ea1'}}>
             <h2 className="text-center text-4xl  font-bold">
               Activity
             </h2>
             {booking.activity == null ? (
               <Spinner />
             ) : (
-              <div className="stats bg-blue-200 stats-vertical w-full" 	style={{ backgroundColor: '#8a46a3' }}>
+              <div className="stats bg-blue-200 stats-vertical w-full" 	style={{ backgroundColor: '#9c9ea1' }}>
                 <div className="stat">
                   <div className="stat-title">Activity Name</div>
                   <div className="stat-value">
@@ -137,14 +139,14 @@ export default function BookingInfo() {
               </div>
             )}
           </div>
-          <div className="rounded p-2" style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)', backgroundColor: '#8a46a3'}}>
+          <div className="rounded p-2" style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)', backgroundColor: '#9c9ea1'}}>
             <h2 className="text-center text-4xl  font-bold">
               Location && Time
             </h2>
             {(booking.classData && booking.room) == null ? (
               <Spinner />
             ) : (
-              <div className="stats bg-blue-200 stats-vertical w-full" 	style={{ backgroundColor: '#8a46a3' }}>
+              <div className="stats bg-blue-200 stats-vertical w-full" 	style={{ backgroundColor: '#9c9ea1' }}>
                 <div className="stat">
                   <div className="stat-title">ClassDate</div>
                   <div className="stat-value whitespace-normal">
@@ -167,14 +169,14 @@ export default function BookingInfo() {
               </div>
             )}
           </div>
-          <div className="rounded p-2" style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)', backgroundColor: '#8a46a3' }}>
+          <div className="rounded p-2" style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)', backgroundColor: '#9c9ea1' }}>
             <h2 className="text-center text-4xl  font-bold ">
               User
             </h2>
             {user == null ? (
               <Spinner />
             ) : (
-              <div className="stats bg-blue-200 stats-vertical w-full" 	style={{ backgroundColor: '#8a46a3' }}>
+              <div className="stats bg-blue-200 stats-vertical w-full" 	style={{ backgroundColor: '#9c9ea1' }}>
                 <div className="stat">
                   <div className="stat-title">First Name</div>
                   <div className="stat-value whitespace-normal">
@@ -196,14 +198,14 @@ export default function BookingInfo() {
               </div>
             )}
           </div>
-          <div className="rounded p-2" style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)',backgroundColor: '#8a46a3' }}>
+          <div className="rounded p-2" style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)',backgroundColor: '#9c9ea1' }}>
             <h2 className="text-center text-4xl  font-bold">
               Trainer
             </h2>
             {booking.staff == null ? (
               <Spinner />
             ) : (
-              <div className="stats bg-blue-200 stats-vertical w-full" 	style={{ backgroundColor: '#8a46a3' }}>
+              <div className="stats bg-blue-200 stats-vertical w-full" 	style={{ backgroundColor: '#9c9ea1' }}>
                 <div className="stat">
                   <div className="stat-title">First Name</div>
                   <div className="stat-value whitespace-normal">

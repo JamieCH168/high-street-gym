@@ -27,7 +27,7 @@ export default function Nav() {
 
     return (
         <div>
-            <div className={`navbar  bg-blue-100   justify-between flex-wrap`} 	style={{ backgroundColor: '#8a46a3' }}>
+            <div className={`navbar  bg-blue-100   justify-between flex-wrap`} style={{ backgroundColor: '#8a46a3' }}>
 
                 {/* <div className={`navbar  bg-base-200 ${user ? 'justify-between' : 'justify-around'} flex-wrap`}> */}
 
@@ -68,17 +68,17 @@ export default function Nav() {
                               max-[1135px]:bg-[#686973]
                                 max-[1135px]:z-40 
                                 '>
-                    <NavLink className="btn btn-ghost btn-outline border-0 normal-case text-base md:text-xl" to="/" >Home</NavLink>
+                    <NavLink className="btn btn-ghost btn-outline border-0 normal-case text-base md:text-xl text-zinc-50" to="/" >Home</NavLink>
 
-                    <NavLink activeClassName="active-link" className="btn btn-ghost btn-outline border-0 normal-case text-base md:text-xl" to="/facility" >Facility</NavLink>
+                    <NavLink activeClassName="active-link" className="btn btn-ghost btn-outline border-0 normal-case text-base md:text-xl text-zinc-50" to="/facility" >Facility</NavLink>
 
-                    <NavLink className="btn btn-ghost btn-outline border-0 normal-case text-lg md:text-xl 0" to="/class_booking">Class</NavLink>
+                    <NavLink className="btn btn-ghost btn-outline border-0 normal-case text-lg md:text-xl text-zinc-50" to="/class_booking">Class</NavLink>
 
                     {
-                        user && <NavLink className="btn btn-ghost btn-outline border-0 normal-case text-base  md:text-xl 0" to="/user_booking">Booking</NavLink>
+                        user && <NavLink className="btn btn-ghost btn-outline border-0 normal-case text-base  md:text-xl text-zinc-50" to="/user_booking">Booking</NavLink>
                     }
 
-                    <NavLink className="btn btn-ghost btn-outline border-0 normal-case text-base  md:text-xl 0" to="/blog_post_page">Blog Post</NavLink>
+                    <NavLink className="btn btn-ghost btn-outline border-0 normal-case text-base  md:text-xl text-zinc-50" to="/blog_post_page">Blog Post</NavLink>
 
                     {/* {
                         user && (user.staff_access_role === "admin" || user.staff_access_role === "trainer") &&
@@ -87,27 +87,27 @@ export default function Nav() {
 
                     {user && (user.staff_access_role === "admin" || user.staff_access_role === "trainer") &&
                         <div className="dropdown dropdown-hover">
-                            <label tabIndex={0} className="btn btn-ghost btn-outline border-0 normal-case text-base  md:text-xl">Class CRUD</label>
+                            <label tabIndex={0} className="btn btn-ghost btn-outline border-0 normal-case text-base  md:text-xl text-zinc-50">Class CRUD</label>
                             <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 ">
                                 <li>
-                                    <NavLink className="btn btn-ghost btn-outline border-0 normal-case text-base md:text-xl justify-start "
+                                    <NavLink className="btn btn-ghost btn-outline border-0 normal-case text-base md:text-xl  justify-start "
                                         to="/booking">Booking</NavLink>
                                 </li>
                                 <li>
                                     <NavLink
-                                        className="btn btn-ghost btn-outline border-0 normal-case text-base md:text-xl justify-start"
+                                        className="btn btn-ghost btn-outline border-0 normal-case text-base md:text-xl  justify-start"
                                         to="/class">Class</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink className="btn btn-ghost btn-outline border-0 normal-case text-base md:text-xl justify-start"
+                                    <NavLink className="btn btn-ghost btn-outline border-0 normal-case text-base md:text-xl  justify-start"
                                         to="/activity">Activity</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink className="btn btn-ghost btn-outline border-0 normal-case text-base md:text-xl justify-start"
+                                    <NavLink className="btn btn-ghost btn-outline border-0 normal-case text-base md:text-xl  justify-start"
                                         to="/room">Room</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink className="btn btn-ghost btn-outline border-0 normal-case text-base md:text-xl justify-start"
+                                    <NavLink className="btn btn-ghost btn-outline border-0 normal-case text-base md:text-xl  justify-start"
                                         to="/blog_post">Post</NavLink>
                                 </li>
                             </ul>
@@ -117,16 +117,16 @@ export default function Nav() {
 
                     {
                         user && user.staff_access_role === "admin" &&
-                        <NavLink className="btn btn-ghost btn-outline border-0 normal-case text-base  md:text-xl 0" to="/staff">Admin</NavLink>
+                        <NavLink className="btn btn-ghost btn-outline border-0 normal-case text-base  md:text-xl text-zinc-50" to="/staff">Admin</NavLink>
                     }
-                    <NavLink className="btn btn-ghost btn-outline border-0 normal-case text-base md:text-xl 0" to="/join">Join US</NavLink>
-                    <NavLink className="btn btn-ghost btn-outline border-0 normal-case text-base  md:text-xl 0" to="/contact">Contact US</NavLink>
+                    <NavLink className="btn btn-ghost btn-outline border-0 normal-case text-base md:text-xl text-zinc-50 " to="/join">Join US</NavLink>
+                    <NavLink className="btn btn-ghost btn-outline border-0 normal-case text-base  md:text-xl text-zinc-50" to="/contact">Contact US</NavLink>
                     {
                         user
-                            ? <a className="btn btn-ghost btn-outline border-0 normal-case text-base  md:text-xl 0" onClick={onLogoutClick} >Logout</a>
+                            ? <a className="btn btn-ghost btn-outline border-0 normal-case text-base  md:text-xl text-zinc-50" onClick={onLogoutClick} >Logout</a>
                             : (
                                 <div>
-                                    <NavLink className="btn btn-ghost btn-outline border-0 normal-case text-base  md:text-xl 0" to="/login">Sign in</NavLink>
+                                    <NavLink className="btn btn-ghost btn-outline border-0 normal-case text-base  md:text-xl text-zinc-50" to="/login">Sign in</NavLink>
                                     {/* <NavLink className="btn btn-ghost btn-outline border-0 normal-case text-base  md:text-xl 0" to="/register">Sign up</NavLink> */}
                                 </div>
                             )

@@ -8,11 +8,9 @@ import Filter from '../components/Filter'
 import ToolBar from '../components/ToolBar'
 
 export default function User_Booking() {
-
     const navigate = useNavigate()
     const [activity, setActivity] = useState([]);
     const [activityName, setActivityName] = useState("");
-
     useEffect(() => {
         getAllActivities().then(async activities => {
             const activitiesWithClassData = await Promise.all(activities.map(async activity => {
@@ -89,7 +87,9 @@ export default function User_Booking() {
     });
 
     return (
-        <div className="flex flex-col min-h-screen bg-blue-200">
+        <div className="flex flex-col min-h-screen bg-blue-200" style={{ backgroundImage: `url('/Blog_1.jpg')`,
+        backgroundAttachment: 'fixed' ,
+        backgroundPosition: 'center'}}>
             <Nav></Nav>
             <ToolBar></ToolBar>
             <Filter
@@ -102,14 +102,14 @@ export default function User_Booking() {
                     // const imagePath = '../../public/' + data.activity_name.replace(" ", "%20") + '.jpg';
                     // console.log(data.activity_name);
 
-                    <div className="card bg-blue-300 w-full h-full shadow-xl image-full ">
+                    <div className="card bg-blue-300 w-full h-full shadow-xl  ">
                         {/* <figure className='h-64 relative group '>
                             <img
                                 src={"../../public/abs.jpg"} alt={`${data.activity_name}`}
                                 className='group-hover:scale-[1.7] group-hover:rotate-[20deg] group-hover:duration-500 group-hover:ease-linear  group-hover:opacity-50'
                             />
                         </figure> */}
-                        <figure className='relative group'>
+                        <figure className='relative group h-64'>
                             <img
                                 src={
                                     '/' + data.activity_name.toLowerCase().replace(" ", "%20") + '.jpg' || 'stop.jpg'
@@ -143,12 +143,7 @@ export default function User_Booking() {
                             </div>
                         </div>
                     </div>
-
-
-
-
                 ))}
-
             </div>
             <Footer></Footer>
         </div>

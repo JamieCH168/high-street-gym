@@ -117,15 +117,12 @@ export default function StaffCRUD() {
           }
         });
       }
-
-
       setStaff(sortedStaff);
     });
   }, [sortColumn, sortOrder, selectedStaffID]);
 
 
   useEffect(() => {
-
     if (selectedStaffID) {
       getStaffByID(selectedStaffID).then((user) => {
         setSelectedStaff(user);
@@ -202,15 +199,16 @@ export default function StaffCRUD() {
 
 
   return (
-    <div className="flex flex-col min-h-screen bg-emerald-100 ">
+    <div className="flex flex-col min-h-screen bg-emerald-100 " style={{ backgroundImage: `url('/Blog_1.jpg')` ,
+    backgroundAttachment: 'fixed'}}>
       {showConfirm && <DeleteHandler
         onDelete={deleteSelectedStaff}
         onCancel={cancelConfirmHandler}
       ></DeleteHandler>}
       <Nav />
 
-      <h1 className="text-5xl font-bold my-6 text-center">User List</h1>
-      <h2 className="text-3xl font-bold my-6 text-center">Our success is a reflection of our team's hard work and dedication.</h2>
+      <h1 className="text-5xl font-bold my-6 text-center text-zinc-50">User List</h1>
+      <h2 className="text-3xl font-bold my-6 text-center text-zinc-50">Our success is a reflection of our team's hard work and dedication.</h2>
 
       <div className=" grow grid grid-cols-1 xl:grid-cols-1 my-10 mx-auto justify-items-center gap-10 w-8/12 ">
         <div className="overflow-auto w-full rounded p-2 my-4 " style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)' }}>
@@ -289,7 +287,6 @@ export default function StaffCRUD() {
 
 
         {isModalOpen && (
-
           <div className="w-full rounded p-2 my-4
           fixed inset-0 bg-[#000] 
         text-3xl m-auto flex justify-evenly items-center z-10"

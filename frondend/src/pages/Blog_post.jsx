@@ -204,14 +204,16 @@ export default function postCRUD() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-emerald-100 ">
+    <div className="flex flex-col min-h-screen bg-emerald-100 " style={{ backgroundImage: `url('/Blog_1.jpg')` ,
+    backgroundAttachment: 'fixed',
+
+    }}>
       {showConfirm && <DeleteHandler
         onDelete={deleteSelectedPost}
         onCancel={cancelConfirmHandler}
       ></DeleteHandler>}
       <Nav></Nav>
-      <h1 className="text-3xl lg:text-5xl font-bold my-6 text-center">Post CRUD</h1>
-
+      <h1 className="text-3xl lg:text-5xl font-bold my-6 text-center text-zinc-50">Post CRUD</h1>
       <div className="grow grid grid-cols-1 xl:grid-cols-1  justify-items-center w-8/12 mx-auto gap-4 mb-4 pb-4">
         <div className="overflow-auto w-full rounded  p-2" style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)' }}>
           <table className="table table-compact text-center w-full">
@@ -284,18 +286,19 @@ export default function postCRUD() {
                   <td
                     // className="bg-emerald-100"
                     style={{
-                      backgroundColor: 'var(--tw-bg-emerald-100)',
+                      backgroundColor: 'rgb(209 250 229)',
                       overflowWrap: 'break-word',
                       whiteSpace: 'normal',
                       maxWidth: '400px',
-                      textAlign: 'left'
+                      textAlign: 'left',
+
                     }
                     }
 
                   >{data.post_content}</td>
 
                   <td style={{
-                    backgroundColor: 'var(--tw-bg-emerald-100)',
+                    backgroundColor: 'rgb(209 250 229)',
                     wordWrap: 'break-word',
                     maxWidth: '200px'
                   }
