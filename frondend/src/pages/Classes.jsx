@@ -225,32 +225,32 @@ export default function classCRUD() {
 
 
   return (
-    <div className="flex flex-col min-h-screen  bg-emerald-100" style={{ backgroundImage: `url('/Blog_1.jpg')` ,
-    backgroundAttachment: 'fixed'}}>
+    <div className="flex flex-col min-h-screen " style={{
+      backgroundImage: `url('/Blog_1.jpg')`,
+      backgroundAttachment: 'fixed'
+    }}>
       {showConfirm && <DeleteHandler
         onDelete={deleteSelectedClass}
         onCancel={cancelConfirmHandler}
       ></DeleteHandler>}
       <Nav></Nav>
       <h1 className="text-3xl lg:text-5xl font-bold my-6 text-center text-zinc-50">Class CRUD</h1>
-
-      <div className="grow grid grid-cols-1 xl:grid-cols-1  justify-items-center w-8/12 mx-auto gap-4 pb-4">
-        <div className="w-full overflow-auto rounded p-2" style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)' }}>
-          <table className=" table table-compact w-full text-center">
+      <div className="grid grid-cols-1 xl:grid-cols-1 mx-auto justify-items-center w-8/12 ">
+        <div className="w-full my-4 overflow-auto p-1">
+          <table className="table table-compact w-full text-center shadow-green rounded-[7px]">
             <thead>
               {!isModalOpen && (<tr>
                 <th
-                  className="w-[10%] bg-emerald-100 cursor-pointer hover:bg-blue-300"
+                  className="w-[10%] bg-emerald-100 bg-opacity-70 cursor-pointer hover:bg-blue-300 "
+                  style={{ position: 'static' }}
                   onClick={() => handleSortClick("id")} >
-
                   <span>ID</span>
-
                   {sortColumn === 'id' && (
                     <span className="ml-2">{sortOrder === 'asc' ? '▲' : '▼'}</span>
                   )}
                 </th>
                 <th
-                  className="w-[15%] bg-emerald-100 cursor-pointer hover:bg-blue-300"
+                  className="w-[15%] bg-emerald-100 bg-opacity-70 cursor-pointer hover:bg-blue-300"
                   onClick={() => handleSortClick("date")} >
                   <span>Date</span>
                   {sortColumn === 'date' && (
@@ -258,7 +258,7 @@ export default function classCRUD() {
                   )}
                 </th>
                 <th
-                  className="w-[15%] bg-emerald-100 cursor-pointer hover:bg-blue-300"
+                  className="w-[15%] bg-emerald-100 bg-opacity-70 cursor-pointer hover:bg-blue-300"
                   onClick={() => handleSortClick("time")} >
                   <span>Time</span>
                   {sortColumn === 'time' && (
@@ -266,7 +266,7 @@ export default function classCRUD() {
                   )}
                 </th>
                 <th
-                  className="w-[15%] bg-emerald-100 cursor-pointer hover:bg-blue-300"
+                  className="w-[15%] bg-emerald-100 bg-opacity-70 cursor-pointer hover:bg-blue-300"
                   onClick={() => handleSortClick("roomId")} >
                   <span>Room ID</span>
                   {sortColumn === 'roomId' && (
@@ -274,7 +274,7 @@ export default function classCRUD() {
                   )}
                 </th>
                 <th
-                  className="w-[15%] bg-emerald-100 cursor-pointer hover:bg-blue-300"
+                  className="w-[15%] bg-emerald-100 bg-opacity-70 cursor-pointer hover:bg-blue-300"
                   onClick={() => handleSortClick("activityId")} >
                   <span>Activity ID</span>
                   {sortColumn === 'activityId' && (
@@ -282,27 +282,26 @@ export default function classCRUD() {
                   )}
                 </th>
                 <th
-                  className="w-[15%] bg-emerald-100 cursor-pointer hover:bg-blue-300"
+                  className="w-[15%] bg-emerald-100 bg-opacity-70 cursor-pointer hover:bg-blue-300"
                   onClick={() => handleSortClick("trainerId")} >
                   <span>Trainer ID</span>
                   {sortColumn === 'trainerId' && (
                     <span className="ml-2">{sortOrder === 'asc' ? '▲' : '▼'}</span>
                   )}
                 </th>
-                <th className="bg-emerald-100 " >Status</th>
+                <th className="bg-emerald-100 bg-opacity-70 " >Status</th>
               </tr>)}
-
             </thead>
-            <tbody>
+            <tbody >
               {classData.map((data) => (
                 <tr key={data.class_id}>
-                  <td className="bg-emerald-100">{data.class_id}</td>
-                  <td className="bg-emerald-100">{data.class_date}</td>
-                  <td className="bg-emerald-100">{data.class_time}</td>
-                  <td className="bg-emerald-100">{data.class_room_id}</td>
-                  <td className="bg-emerald-100">{data.class_activity_id}</td>
-                  <td className="bg-emerald-100">{data.class_trainer_user_id}</td>
-                  <td className="bg-emerald-100">
+                  <td className="bg-emerald-100 bg-opacity-70">{data.class_id}</td>
+                  <td className="bg-emerald-100 bg-opacity-70">{data.class_date}</td>
+                  <td className="bg-emerald-100 bg-opacity-70">{data.class_time}</td>
+                  <td className="bg-emerald-100 bg-opacity-70">{data.class_room_id}</td>
+                  <td className="bg-emerald-100 bg-opacity-70">{data.class_activity_id}</td>
+                  <td className="bg-emerald-100 bg-opacity-70">{data.class_trainer_user_id}</td>
+                  <td className="bg-emerald-100 bg-opacity-70">
                     <button
                       className="btn btn-xs"
                       // onClick={() => setSelectedClassID(data.class_id)}
@@ -316,10 +315,7 @@ export default function classCRUD() {
             </tbody>
           </table>
         </div>
-
-
         {isModalOpen && (
-
           <div className="w-full 
           fixed inset-0 bg-[#000] 
           text-3xl m-auto flex justify-evenly items-center z-10
@@ -344,7 +340,7 @@ export default function classCRUD() {
                 </label>
                 <input
                   type="text"
-                  className="input input-bordered bg-emerald-100"
+                  className="input input-bordered bg-emerald-100 "
                   placeholder="2023/04/20"
                   // value={selectedClass.class_date || new Date().toISOString().slice(0, 10)}
                   // value={new Date(selectedClass.class_date).toISOString().slice(0, 10)|| new Date().toISOString().slice(0, 10)}
@@ -518,14 +514,9 @@ export default function classCRUD() {
               </div>
             </div>
           </div>
-
-
-
         )}
-
-
-
-
+      </div>
+      <div className="grow  ">
       </div>
       <Footer></Footer>
     </div>

@@ -214,22 +214,25 @@ export default function bookingCRUD() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-emerald-100" style={{ backgroundImage: `url('/Blog_1.jpg')` ,
-    backgroundAttachment: 'fixed'}}>
+    <div className="flex flex-col min-h-screen" style={{
+      backgroundImage: `url('/Blog_1.jpg')`,
+      backgroundAttachment: 'fixed'
+    }}>
       {showConfirm && <DeleteHandler
         onDelete={deleteSelectedBooking}
         onCancel={cancelConfirmHandler}
       ></DeleteHandler>}
       <Nav></Nav>
       <h1 className="text-3xl lg:text-5xl font-bold my-6 text-center text-zinc-50">Booking CRUD</h1>
-      <div className="grow grid grid-cols-1 xl:grid-cols-1 justify-items-center w-8/12 mx-auto gap-4 pb-4">
-        <div className="w-full overflow-auto rounded p-2 " style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)' }}>
-          <table className="w-full table table-compact text-center " >
+      <div className="grid grid-cols-1 xl:grid-cols-1 justify-items-center w-8/12 mx-auto gap-4 pb-4">
+        <div className="w-full overflow-auto p-1" style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)' }}>
+          <table className="w-full table table-compact text-center shadow-green rounded-[7px] " >
             <thead >
               {!isModalOpen && (
                 <tr >
                   <th
-                    className="w-[17%] bg-emerald-100 cursor-pointer hover:bg-blue-300"
+                    className="w-[17%] bg-emerald-100 bg-opacity-70 cursor-pointer hover:bg-blue-300"
+                    style={{ position: 'static' }}
                     onClick={() => handleSortClick("id")} >
                     <span>ID</span>
                     {sortColumn === 'id' && (
@@ -237,7 +240,7 @@ export default function bookingCRUD() {
                     )}
                   </th>
                   <th
-                    className="w-[17%] bg-emerald-100 cursor-pointer hover:bg-blue-300"
+                    className="w-[17%] bg-emerald-100 bg-opacity-70 cursor-pointer hover:bg-blue-300"
                     onClick={() => handleSortClick("userId")} >
                     <span>User ID</span>
                     {sortColumn === 'userId' && (
@@ -245,7 +248,7 @@ export default function bookingCRUD() {
                     )}
                   </th>
                   <th
-                    className="w-[17%] bg-emerald-100 cursor-pointer hover:bg-blue-300"
+                    className="w-[17%] bg-emerald-100 bg-opacity-70 cursor-pointer hover:bg-blue-300"
                     onClick={() => handleSortClick("classId")} >
                     <span>Class ID</span>
                     {sortColumn === 'classId' && (
@@ -253,7 +256,7 @@ export default function bookingCRUD() {
                     )}
                   </th>
                   <th
-                    className="w-[17%] bg-emerald-100 cursor-pointer hover:bg-blue-300"
+                    className="w-[17%] bg-emerald-100 bg-opacity-70 cursor-pointer hover:bg-blue-300"
                     onClick={() => handleSortClick("date")} >
                     <span>Date</span>
                     {sortColumn === 'date' && (
@@ -261,26 +264,26 @@ export default function bookingCRUD() {
                     )}
                   </th>
                   <th
-                    className="w-[17%] bg-emerald-100 cursor-pointer hover:bg-blue-300"
+                    className="w-[17%] bg-emerald-100 bg-opacity-70 cursor-pointer hover:bg-blue-300"
                     onClick={() => handleSortClick("time")} >
                     <span>Time</span>
                     {sortColumn === 'time' && (
                       <span className="ml-2">{sortOrder === 'asc' ? '▲' : '▼'}</span>
                     )}
                   </th>
-                  <th className="bg-emerald-100">Status</th>
+                  <th className="bg-emerald-100 bg-opacity-70">Status</th>
                 </tr>
               )}
             </thead>
             <tbody>
               {booking.map((data) => (
                 <tr key={data.booking_id} >
-                  <td className="bg-emerald-100">{data.booking_id}</td>
-                  <td className="bg-emerald-100">{data.booking_user_id}</td>
-                  <td className="bg-emerald-100">{data.booking_class_id}</td>
-                  <td className="bg-emerald-100">{data.booking_created_date}</td>
-                  <td className="bg-emerald-100">{data.booking_created_time}</td>
-                  <td className="bg-emerald-100">
+                  <td className="bg-emerald-100 bg-opacity-70">{data.booking_id}</td>
+                  <td className="bg-emerald-100 bg-opacity-70">{data.booking_user_id}</td>
+                  <td className="bg-emerald-100 bg-opacity-70">{data.booking_class_id}</td>
+                  <td className="bg-emerald-100 bg-opacity-70">{data.booking_created_date}</td>
+                  <td className="bg-emerald-100 bg-opacity-70">{data.booking_created_time}</td>
+                  <td className="bg-emerald-100 bg-opacity-70">
                     <button
                       className="btn btn-xs"
                       // onClick={() => setSelectedBookingID(data.booking_id)}
@@ -458,6 +461,10 @@ export default function bookingCRUD() {
 
         )}
 
+
+
+      </div>
+      <div className="grow  ">
 
 
       </div>

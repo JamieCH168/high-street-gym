@@ -135,7 +135,7 @@ export default function roomCRUD() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen  bg-emerald-100 " style={{ backgroundImage: `url('/Blog_1.jpg')` ,
+    <div className="flex flex-col min-h-screen" style={{ backgroundImage: `url('/Blog_1.jpg')` ,
     backgroundAttachment: 'fixed'}}>
       {showConfirm && <DeleteHandler
         onDelete={deleteSelectedRoom}
@@ -143,15 +143,15 @@ export default function roomCRUD() {
       ></DeleteHandler>}
       <Nav></Nav>
       <h1 className="text-3xl lg:text-5xl font-bold my-6 text-center text-zinc-50">Room CRUD</h1>
-      <div className="grow grid grid-cols-1 xl:grid-cols-1   justify-items-center w-8/12 mx-auto gap-4 pb-4">
-        <div className="w-full rounded  p-2" style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)' }}>
-          <table className="w-full table table-compact text-center">
+      <div className="grid grid-cols-1 xl:grid-cols-1 justify-items-center w-8/12 mx-auto gap-4 pb-4">
+        <div className="w-full rounded  p-1 overflow-auto">
+          <table className="w-full table table-compact text-center shadow-green rounded-[7px]">
             <thead>
-
               {!isModalOpen && (
                 <tr>
                   <th
-                    className="w-[25%] bg-emerald-100 cursor-pointer hover:bg-blue-300"
+                    className="w-[25%] bg-emerald-100 bg-opacity-70 cursor-pointer hover:bg-blue-300"
+                    style={{ position: 'static' }}
                     onClick={() => handleSortClick("id")} >
                     <span>ID</span>
                     {sortColumn === 'id' && (
@@ -159,7 +159,7 @@ export default function roomCRUD() {
                     )}
                   </th>
                   <th
-                    className="w-[25%] bg-emerald-100 cursor-pointer hover:bg-blue-300"
+                    className="w-[25%] bg-emerald-100 bg-opacity-70 cursor-pointer hover:bg-blue-300"
                     onClick={() => handleSortClick("location")} >
                     <span>Location</span>
                     {sortColumn === 'location' && (
@@ -167,14 +167,14 @@ export default function roomCRUD() {
                     )}
                   </th>
                   <th
-                    className="w-[25%] bg-emerald-100 cursor-pointer hover:bg-blue-300"
+                    className="w-[25%] bg-emerald-100 bg-opacity-70 cursor-pointer hover:bg-blue-300"
                     onClick={() => handleSortClick("number")} >
                     <span>Number</span>
                     {sortColumn === 'number' && (
                       <span className="ml-2">{sortOrder === 'asc' ? '▲' : '▼'}</span>
                     )}
                   </th>
-                  <th className="bg-emerald-100 " >Status</th>
+                  <th className="bg-emerald-100 bg-opacity-70 " >Status</th>
                 </tr>
               )}
 
@@ -182,10 +182,10 @@ export default function roomCRUD() {
             <tbody>
               {room.map((data) => (
                 <tr key={data.room_id}>
-                  <td className="bg-emerald-100">{data.room_id}</td>
-                  <td className="bg-emerald-100">{data.room_location}</td>
-                  <td className="bg-emerald-100">{data.room_number}</td>
-                  <td className="bg-emerald-100">
+                  <td className="bg-emerald-100 bg-opacity-70">{data.room_id}</td>
+                  <td className="bg-emerald-100 bg-opacity-70">{data.room_location}</td>
+                  <td className="bg-emerald-100 bg-opacity-70">{data.room_number}</td>
+                  <td className="bg-emerald-100 bg-opacity-70">
                     <button
                       className="btn btn-xs"
                       // onClick={() => setSelectedRoomID(data.room_id)}
@@ -199,7 +199,7 @@ export default function roomCRUD() {
             </tbody>
           </table>
         </div>
-        <div className="rounded p-2 my-4 w-full" style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)' }}>
+        <div className="rounded p-2 my-2 w-full" style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)' }}>
           <XMLUpload
             endpoint="/room/upload/xml"
             onUploadSuccess={() => {
@@ -282,6 +282,8 @@ export default function roomCRUD() {
             </div>
           </div>
         )}
+      </div>
+      <div className="grow  ">
       </div>
       {!isModalOpen && (<Footer></Footer>)}
 

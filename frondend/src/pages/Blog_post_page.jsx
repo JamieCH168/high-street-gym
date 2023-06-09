@@ -44,8 +44,10 @@ export default function Blog_post() {
 		}
 	}
 	return (
-		<div className='flex flex-col min-h-screen bg-blue-200' style={{ backgroundImage: `url('/Blog_1.jpg')`,
-		backgroundAttachment: 'fixed' }}>
+		<div className='flex flex-col min-h-screen bg-blue-200' style={{
+			backgroundImage: `url('/Blog_1.jpg')`,
+			backgroundAttachment: 'fixed'
+		}}>
 			{showConfirm && <DeleteHandler
 				onDelete={deleteSelectedPost}
 				onCancel={cancelConfirmHandler}
@@ -53,8 +55,6 @@ export default function Blog_post() {
 			<Nav></Nav>
 			<ToolBar></ToolBar>
 			<h1 className="text-5xl font-bold my-6 text-center text-zinc-50">Blog Post</h1>
-
-
 			<div className='mx-auto mb-6 '>
 				<div className='mx-6'>
 					<button
@@ -104,20 +104,22 @@ export default function Blog_post() {
 					)}
 				</div>
 			</div> */}
-
-
 			<div className="grow w-8/12 mx-auto ">
 				{posts.map((post, index) => (
 					<div>
-						<div className="hero-content items-center xl:items-stretch flex  flex-col xl:flex-row ">
+						<div className="hero-content items-center xl:items-stretch flex  flex-col xl:flex-row gap-0">
 							{index % 2 === 0 ? (
 								<img
 									src={`../../public/${post.post_title}.jpg`}
 									alt={`${post.post_title}`}
-									className=" w-full xl:w-1/2 max-h-[400px] md:max-h-[600px] rounded-lg shadow-2xl bg-yellow-300 " />
+									className=" w-full xl:w-1/2 max-h-[400px] md:max-h-[600px] rounded-tl-lg rounded-bl-lg shadow-2xl bg-yellow-300 " />
 							) : null}
+							<div
+								className={`w-full xl:w-1/2 max-h-[400px] md:max-h-[600px] lg: flex flex-col justify-between   p-2 
+								${index % 2 === 1 ? 'rounded-tl-lg rounded-bl-lg' : 'rounded-tr-lg rounded-br-lg'}
+							}`}
 
-							<div className="w-full xl:w-1/2 max-h-[400px] md:max-h-[600px]      lg: flex flex-col justify-between  mx-2  rounded p-2" style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)', backgroundColor: '#9c9ea1' }}  >
+								style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)', backgroundColor: '#9c9ea1' }}  >
 								<div>
 									<h1 className="text-3xl font-bold my-4 uppercase"> {post.post_title}</h1>
 									{user ? (
@@ -190,7 +192,7 @@ export default function Blog_post() {
 								<img
 									src={`../../public/${post.post_title}.jpg`}
 									alt={`${post.post_title}`}
-									className=" w-full xl:w-1/2 max-h-[400px] md:max-h-[600px] rounded-lg shadow-2xl bg-yellow-300 " />
+									className=" w-full xl:w-1/2 max-h-[400px] md:max-h-[600px] rounded-tr-lg rounded-br-lg shadow-2xl bg-yellow-300 " />
 							) : null}
 						</div>
 					</div>

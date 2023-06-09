@@ -111,14 +111,17 @@ export default function postCRUD() {
   // }
 
   return (
-    <div className="flex flex-col min-h-screen bg-blue-200">
+    <div className="flex flex-col min-h-screen" style={{
+      backgroundImage: `url('/Blog_1.jpg')`,
+      backgroundAttachment: 'fixed'
+  }}>
       <Nav></Nav>
-      {post_id ? <h1 className="text-5xl font-bold my-6 text-center">Post Edit</h1> : <h1 className="text-5xl font-bold my-6 text-center">New Post</h1>
+      {post_id ? <h1 className="text-5xl font-bold my-6 text-center">Post Edit</h1> : <h1 className="text-zinc-50 text-5xl font-bold my-6 text-center">New Post</h1>
       }
       {/* <div className="grow grid grid-cols-1  justify-items-center mb-6"> */}
       <div className="grow flex flex-col mb-6 items-center ">
-        <div className="w-8/12  rounded  p-2 " 
-        style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)', backgroundColor: '#8a46a3'}}>
+        <div className="w-8/12 rounded  p-2 bg-emerald-100 bg-opacity-70 shadow-green " 
+       >
           <div className="form-control">
             <label className="label">
               <span className="label-text">post_date:</span>
@@ -284,7 +287,7 @@ export default function postCRUD() {
             New
           </button>
           <button
-            className="btn"
+            className="btn btn-secondary"
             onClick={() => {
               createOrUpdateSelectedPost(),
                 navigate("/blog_post_page")

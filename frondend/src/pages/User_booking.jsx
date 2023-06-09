@@ -74,8 +74,10 @@ export default function BookingInfo() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-blue-200" style={{ backgroundImage: `url(${homepage_picture})`,
-    backgroundAttachment: 'fixed' }}>
+    <div className="flex flex-col min-h-screen bg-blue-200" style={{
+      backgroundImage: `url(${homepage_picture})`,
+      backgroundAttachment: 'fixed'
+    }}>
       <Nav />
       <ToolBar></ToolBar>
       {showConfirm && (
@@ -100,7 +102,7 @@ export default function BookingInfo() {
           key={booking.id}
           className="grow container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 w-8/12"
         >
-          <div className="font-bold text-lg">
+          <div className="font-bold text-lg text-zinc-50">
             <span className="mr-3">
               {" "}
               Time:{booking.booking.booking_created_time}
@@ -108,14 +110,14 @@ export default function BookingInfo() {
             <span> Date:{booking.booking.booking_created_date}</span>
           </div>
           <div></div>
-          <div className="rounded p-2" style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)', backgroundColor: '#9c9ea1'}}>
+          <div className="rounded p-2" style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)', backgroundColor: 'rgba(156, 158, 161, 0.7)'  }}>
             <h2 className="text-center text-4xl  font-bold">
               Activity
             </h2>
             {booking.activity == null ? (
               <Spinner />
             ) : (
-              <div className="stats bg-blue-200 stats-vertical w-full" 	style={{ backgroundColor: '#9c9ea1' }}>
+              <div className="stats bg-transparent  stats-vertical w-full" 	>
                 <div className="stat">
                   <div className="stat-title">Activity Name</div>
                   <div className="stat-value">
@@ -125,7 +127,9 @@ export default function BookingInfo() {
                 <div className="stat">
                   <div className="stat-title">Description</div>
                   <div className="stat-value" style={{
-                    whiteSpace: 'pre-wrap',
+                    whiteSpace: 'nowrap',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis'
                   }} >
                     {booking.activity.activity_description}
                   </div>
@@ -139,14 +143,14 @@ export default function BookingInfo() {
               </div>
             )}
           </div>
-          <div className="rounded p-2" style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)', backgroundColor: '#9c9ea1'}}>
+          <div className="rounded p-2" style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)', backgroundColor: 'rgba(156, 158, 161, 0.7)'  }}>
             <h2 className="text-center text-4xl  font-bold">
               Location && Time
             </h2>
             {(booking.classData && booking.room) == null ? (
               <Spinner />
             ) : (
-              <div className="stats bg-blue-200 stats-vertical w-full" 	style={{ backgroundColor: '#9c9ea1' }}>
+              <div className="stats bg-transparent  stats-vertical w-full" 	>
                 <div className="stat">
                   <div className="stat-title">ClassDate</div>
                   <div className="stat-value whitespace-normal">
@@ -169,14 +173,14 @@ export default function BookingInfo() {
               </div>
             )}
           </div>
-          <div className="rounded p-2" style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)', backgroundColor: '#9c9ea1' }}>
+          <div className="rounded p-2" style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)', backgroundColor: 'rgba(156, 158, 161, 0.7)'  }}>
             <h2 className="text-center text-4xl  font-bold ">
               User
             </h2>
             {user == null ? (
               <Spinner />
             ) : (
-              <div className="stats bg-blue-200 stats-vertical w-full" 	style={{ backgroundColor: '#9c9ea1' }}>
+              <div className="stats bg-transparent  stats-vertical w-full" 	>
                 <div className="stat">
                   <div className="stat-title">First Name</div>
                   <div className="stat-value whitespace-normal">
@@ -198,14 +202,14 @@ export default function BookingInfo() {
               </div>
             )}
           </div>
-          <div className="rounded p-2" style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)',backgroundColor: '#9c9ea1' }}>
+          <div className="rounded p-2" style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)', backgroundColor: 'rgba(156, 158, 161, 0.7)'  }}>
             <h2 className="text-center text-4xl  font-bold">
               Trainer
             </h2>
             {booking.staff == null ? (
               <Spinner />
             ) : (
-              <div className="stats bg-blue-200 stats-vertical w-full" 	style={{ backgroundColor: '#9c9ea1' }}>
+              <div className="stats bg-transparent  stats-vertical w-full" 	>
                 <div className="stat">
                   <div className="stat-title">First Name</div>
                   <div className="stat-value whitespace-normal">

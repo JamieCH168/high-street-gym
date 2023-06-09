@@ -162,21 +162,24 @@ export default function activityCRUD() {
     }
 
     return (
-        <div className="flex flex-col min-h-screen bg-emerald-100" style={{ backgroundImage: `url('/Blog_1.jpg')` ,
-        backgroundAttachment: 'fixed'}}>
+        <div className="flex flex-col min-h-screen " style={{
+            backgroundImage: `url('/Blog_1.jpg')`,
+            backgroundAttachment: 'fixed'
+        }}>
             {showConfirm && <DeleteHandler
                 onDelete={deleteSelectedActivity}
                 onCancel={cancelConfirmHandler}
             ></DeleteHandler>}
             <Nav></Nav>
             <h1 className="text-3xl lg:text-5xl font-bold my-6 text-center text-zinc-50">Activity CRUD</h1>
-            <div className="grow grid grid-cols-1 xl:grid-cols-1 justify-items-center w-8/12 mx-auto gap-4 pb-4">
-                <div className="w-full overflow-auto  rounded p-2 " style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)' }}>
-                    <table className="w-full table table-compact">
+            <div className="grid grid-cols-1 xl:grid-cols-1 justify-items-center w-8/12 mx-auto gap-4 pb-4">
+                <div className="w-full overflow-auto p-1">
+                    <table className="w-full table table-compact shadow-green rounded-[7px]">
                         <thead>
                             {!isModalOpen && (<tr>
                                 <th
-                                    className="w-[10%] bg-emerald-100 cursor-pointer hover:bg-blue-300"
+                                    className="w-[10%] bg-emerald-100 bg-opacity-70 cursor-pointer hover:bg-blue-300"
+                                    style={{ position: 'static' }}
                                     onClick={() => handleSortClick("id")} >
                                     <span>ID</span>
                                     {sortColumn === 'id' && (
@@ -184,7 +187,7 @@ export default function activityCRUD() {
                                     )}
                                 </th>
                                 <th
-                                    className="w-[17%] bg-emerald-100 cursor-pointer hover:bg-blue-300"
+                                    className="w-[17%] bg-emerald-100 bg-opacity-70 cursor-pointer hover:bg-blue-300"
                                     onClick={() => handleSortClick("name")} >
                                     <span>Name</span>
                                     {sortColumn === 'name' && (
@@ -192,7 +195,7 @@ export default function activityCRUD() {
                                     )}
                                 </th>
                                 <th
-                                    className="w-[50%] bg-emerald-100 cursor-pointer hover:bg-blue-300"
+                                    className="w-[50%] bg-emerald-100 bg-opacity-70 cursor-pointer hover:bg-blue-300"
                                     onClick={() => handleSortClick("description")} >
                                     <span>Description</span>
                                     {sortColumn === 'description' && (
@@ -200,25 +203,25 @@ export default function activityCRUD() {
                                     )}
                                 </th>
                                 <th
-                                    className="w-[10%] bg-emerald-100 cursor-pointer hover:bg-blue-300"
+                                    className="w-[10%] bg-emerald-100 bg-opacity-70 cursor-pointer hover:bg-blue-300"
                                     onClick={() => handleSortClick("duration")} >
                                     <span>Duration</span>
                                     {sortColumn === 'duration' && (
                                         <span className="ml-2">{sortOrder === 'asc' ? '▲' : '▼'}</span>
                                     )}
                                 </th>
-                                <th className="bg-emerald-100">Status</th>
+                                <th className="bg-emerald-100 bg-opacity-70">Status</th>
                             </tr>)}
 
                         </thead>
                         <tbody>
                             {activity.map((data) => (
                                 <tr key={data.activity_id}>
-                                    <td className="bg-emerald-100">{data.activity_id}</td>
-                                    <td className="bg-emerald-100">{data.activity_name}</td>
-                                    <td className="bg-emerald-100">{data.activity_description}</td>
-                                    <td className="bg-emerald-100">{data.activity_duration}</td>
-                                    <td className="bg-emerald-100">
+                                    <td className="bg-emerald-100 bg-opacity-70">{data.activity_id}</td>
+                                    <td className="bg-emerald-100 bg-opacity-70">{data.activity_name}</td>
+                                    <td className="bg-emerald-100 bg-opacity-70">{data.activity_description}</td>
+                                    <td className="bg-emerald-100 bg-opacity-70">{data.activity_duration}</td>
+                                    <td className="bg-emerald-100 bg-opacity-70">
                                         <button
                                             className="btn btn-xs"
                                             // onClick={() => setSelectedActivityID(data.activity_id)}
@@ -350,6 +353,9 @@ export default function activityCRUD() {
 
                     </div>
                 )}
+            </div>
+
+            <div className="grow  ">
             </div>
             <Footer></Footer>
         </div>

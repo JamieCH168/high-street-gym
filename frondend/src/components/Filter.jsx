@@ -13,7 +13,7 @@ export default function activityFilter({ activityName, onActivityChange, onCance
 
     return (
         <div className="mx-auto mt-10 rounded border-2 border-dashed  p-1 hover:border-transparent" >
-            <div className="form-control flex-row w-[100%] rounded border-2  ">
+            <div className="form-control flex-row w-[100%] rounded border-2 ">
                 {/* <label className="label">
                     <span className="label-text text-xl">Search Class:</span>
                 </label> */}

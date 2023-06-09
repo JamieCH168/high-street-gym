@@ -87,7 +87,7 @@ export default function User_Booking() {
     });
 
     return (
-        <div className="flex flex-col min-h-screen" style={{
+        <div className="flex flex-col min-h-screen bg-blue-200" style={{
             backgroundImage: `url('/Blog_1.jpg')`,
             backgroundAttachment: 'fixed',
             backgroundPosition: 'center'
@@ -101,20 +101,20 @@ export default function User_Booking() {
             ></Filter>
             <div className="grow grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3 y-10  gap-10 m-10 mb-4 w-8/12 mx-auto" >
                 {filterData.map((data) => (
-                    <div className="card  w-full h-full shadow-xl">
-                        <figure className='relative group h-[600px] max-w-[600px] lg:max-w-[400px] shadow-green rounded-lg'>
+                    <div className="card bg-blue-300 w-full h-full shadow-xl">
+                        <figure className='relative group h-64'>
                             <img
                                 src={
                                     '/' + data.activity_name.toLowerCase().replace(" ", "%20") + '.jpg' || 'stop.jpg'
                                 }
                                 alt={data.activity_name}
                                 onError={(e) => { e.target.onerror = null; e.target.src = "/zumba.jpg" }}
-                                className='rounded-lg  h-[600px] group-hover:scale-[1.7] group-hover:rotate-[20deg]   group-hover:duration-500 group-hover:ease-linear  group-hover:opacity-50'
+                                className='group-hover:scale-[1.7] group-hover:rotate-[20deg]   group-hover:duration-500 group-hover:ease-linear  group-hover:opacity-50'
                             />
-                            <span className='absolute inset-0 text-center h-[600px] leading-[16rem] text-[0px] hover:text-[40px] text-cyan-500
+                            <span className='absolute inset-0 text-center h-64 leading-[16rem] text-[0px] hover:text-[40px] text-cyan-500
                         hover:duration-500 hover:ease-linear'
                             >{data.activity_name}</span>
-                            <div className="card-body absolute bottom-0 bg-blue-300 bg-opacity-70 h-[350px] max-w-[600px] lg:max-w-[400px]">
+                            <div className="card-body">
                                 <h2 className="card-title text-center text-4xl">{data.activity_name}</h2>
                                 <p className='pt-6'>
                                     <p className='italic font-bold'>{new Date(data.class_date).toLocaleDateString('en-AU', { weekday: 'long', month: 'long', day: 'numeric' })}</p>
@@ -130,7 +130,7 @@ export default function User_Booking() {
                                 <p>{data.activity_description}</p>
                                 <div className="card-actions justify-end">
                                     <button onClick={() => navigate("/booking/" + data.activity_id)}
-                                        className=" btn bg-transparent  text-lg  border-4 border-[#5008C4FF]   hover:shadow-blue hover:btn-primary hover:text-white-900 " style={{ color: 'rgba(255, 8, 196, 1)' ,filter: 'brightness(200%)'}}>Detail</button>
+                                        className="btn bg-transparent     hover:shadow-blue hover:btn-primary" style={{ color: 'rgba(80, 8, 196, 1)' }}>Detail</button>
                                 </div>
                             </div>
                         </figure>

@@ -204,9 +204,9 @@ export default function postCRUD() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-emerald-100 " style={{ backgroundImage: `url('/Blog_1.jpg')` ,
-    backgroundAttachment: 'fixed',
-
+    <div className="flex flex-col min-h-screen" style={{
+      backgroundImage: `url('/Blog_1.jpg')`,
+      backgroundAttachment: 'fixed',
     }}>
       {showConfirm && <DeleteHandler
         onDelete={deleteSelectedPost}
@@ -214,79 +214,83 @@ export default function postCRUD() {
       ></DeleteHandler>}
       <Nav></Nav>
       <h1 className="text-3xl lg:text-5xl font-bold my-6 text-center text-zinc-50">Post CRUD</h1>
-      <div className="grow grid grid-cols-1 xl:grid-cols-1  justify-items-center w-8/12 mx-auto gap-4 mb-4 pb-4">
-        <div className="overflow-auto w-full rounded  p-2" style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)' }}>
-          <table className="table table-compact text-center w-full">
+      <div className="grid grid-cols-1 xl:grid-cols-1  justify-items-center w-8/12 mx-auto gap-4 mb-4 pb-4">
+        <div className="overflow-auto w-full p-1" >
+          <table className="table table-compact text-center w-full shadow-green rounded-[7px]">
             <thead>
-              <tr>
-                <th
-                  className="w-[10%] bg-emerald-100 cursor-pointer hover:bg-blue-300"
-                  onClick={() => handleSortClick("id")} >
-                  <span>ID</span>
-                  {sortColumn === 'id' && (
-                    <span className="ml-2">{sortOrder === 'asc' ? '▲' : '▼'}</span>
-                  )}
-                </th>
-                <th
-                  className="w-[10%] bg-emerald-100 cursor-pointer hover:bg-blue-300"
-                  onClick={() => handleSortClick("date")} >
-                  <span>Date</span>
-                  {sortColumn === 'date' && (
-                    <span className="ml-2">{sortOrder === 'asc' ? '▲' : '▼'}</span>
-                  )}
-                </th>
-                <th
-                  className="w-[10%] bg-emerald-100 cursor-pointer hover:bg-blue-300"
-                  onClick={() => handleSortClick("time")} >
-                  <span>Time</span>
-                  {sortColumn === 'time' && (
-                    <span className="ml-2">{sortOrder === 'asc' ? '▲' : '▼'}</span>
-                  )}
-                </th>
-                <th
-                  className="w-[10%] bg-emerald-100 cursor-pointer hover:bg-blue-300"
-                  onClick={() => handleSortClick("userId")} >
-                  <span>user Id</span>
-                  {sortColumn === 'userId' && (
-                    <span className="ml-2">{sortOrder === 'asc' ? '▲' : '▼'}</span>
-                  )}
-                </th>
-                <th
-                  className="w-[10%] bg-emerald-100 cursor-pointer hover:bg-blue-300"
-                  onClick={() => handleSortClick("title")} >
-                  <span>Title</span>
-                  {sortColumn === 'title' && (
-                    <span className="ml-2">{sortOrder === 'asc' ? '▲' : '▼'}</span>
-                  )}
-                </th>
-                <th
-                  className=" bg-emerald-100 cursor-pointer hover:bg-blue-300"
-                  style={{
-                    wordWrap: 'break-word',
-                    maxWidth: '500px'
-                  }
-                  }
-                  onClick={() => handleSortClick("content")} >
-                  <span>Content</span>
-                  {sortColumn === 'content' && (
-                    <span className="ml-2">{sortOrder === 'asc' ? '▲' : '▼'}</span>
-                  )}
-                </th>
-                <th className="bg-emerald-100">Status</th>
-              </tr>
+              {!isModalOpen && (
+                <tr>
+                  <th
+                    className="w-[10%] bg-emerald-100 bg-opacity-70 cursor-pointer hover:bg-blue-300"
+                    style={{ position: 'static' }}
+                    onClick={() => handleSortClick("id")} >
+                    <span>ID</span>
+                    {sortColumn === 'id' && (
+                      <span className="ml-2">{sortOrder === 'asc' ? '▲' : '▼'}</span>
+                    )}
+                  </th>
+                  <th
+                    className="w-[10%] bg-emerald-100 bg-opacity-70 cursor-pointer hover:bg-blue-300"
+                    onClick={() => handleSortClick("date")} >
+                    <span>Date</span>
+                    {sortColumn === 'date' && (
+                      <span className="ml-2">{sortOrder === 'asc' ? '▲' : '▼'}</span>
+                    )}
+                  </th>
+                  <th
+                    className="w-[10%] bg-emerald-100 bg-opacity-70 cursor-pointer hover:bg-blue-300"
+                    onClick={() => handleSortClick("time")} >
+                    <span>Time</span>
+                    {sortColumn === 'time' && (
+                      <span className="ml-2">{sortOrder === 'asc' ? '▲' : '▼'}</span>
+                    )}
+                  </th>
+                  <th
+                    className="w-[10%] bg-emerald-100 bg-opacity-70 cursor-pointer hover:bg-blue-300"
+                    onClick={() => handleSortClick("userId")} >
+                    <span>user Id</span>
+                    {sortColumn === 'userId' && (
+                      <span className="ml-2">{sortOrder === 'asc' ? '▲' : '▼'}</span>
+                    )}
+                  </th>
+                  <th
+                    className="w-[10%] bg-emerald-100 bg-opacity-70 cursor-pointer hover:bg-blue-300"
+                    onClick={() => handleSortClick("title")} >
+                    <span>Title</span>
+                    {sortColumn === 'title' && (
+                      <span className="ml-2">{sortOrder === 'asc' ? '▲' : '▼'}</span>
+                    )}
+                  </th>
+                  <th
+                    className=" bg-emerald-100 bg-opacity-70 cursor-pointer hover:bg-blue-300"
+                    style={{
+                      wordWrap: 'break-word',
+                      maxWidth: '500px'
+                    }
+                    }
+                    onClick={() => handleSortClick("content")} >
+                    <span>Content</span>
+                    {sortColumn === 'content' && (
+                      <span className="ml-2">{sortOrder === 'asc' ? '▲' : '▼'}</span>
+                    )}
+                  </th>
+                  <th className="bg-emerald-100 bg-opacity-70">Status</th>
+                </tr>
+              )}
             </thead>
             <tbody>
               {post.map((data) => (
                 <tr key={data.post_id}>
-                  <td className="bg-emerald-100">{data.post_id}</td>
-                  <td className="bg-emerald-100">{data.post_date}</td>
-                  <td className="bg-emerald-100">{data.post_time}</td>
-                  <td className="bg-emerald-100">{data.post_user_id}</td>
-                  <td className="bg-emerald-100">{data.post_title}</td>
+                  <td className="bg-emerald-100 bg-opacity-70">{data.post_id}</td>
+                  <td className="bg-emerald-100 bg-opacity-70">{data.post_date}</td>
+                  <td className="bg-emerald-100 bg-opacity-70">{data.post_time}</td>
+                  <td className="bg-emerald-100 bg-opacity-70">{data.post_user_id}</td>
+                  <td className="bg-emerald-100 bg-opacity-70">{data.post_title}</td>
                   <td
-                    // className="bg-emerald-100"
+
                     style={{
                       backgroundColor: 'rgb(209 250 229)',
+                      opacity: '0.7',
                       overflowWrap: 'break-word',
                       whiteSpace: 'normal',
                       maxWidth: '400px',
@@ -297,12 +301,7 @@ export default function postCRUD() {
 
                   >{data.post_content}</td>
 
-                  <td style={{
-                    backgroundColor: 'rgb(209 250 229)',
-                    wordWrap: 'break-word',
-                    maxWidth: '200px'
-                  }
-                  }>
+                  <td className="bg-emerald-100 bg-opacity-70">
                     <button
                       className="btn btn-xs"
                       // onClick={() => setSelectedPostID(data.post_id)}
@@ -516,6 +515,8 @@ export default function postCRUD() {
             </div>
           </div>
         )}
+      </div>
+      <div className="grow  ">
       </div>
       <Footer></Footer>
     </div>

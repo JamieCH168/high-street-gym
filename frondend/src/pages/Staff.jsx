@@ -197,27 +197,27 @@ export default function StaffCRUD() {
     handleCloseModal()
   }
 
-
   return (
-    <div className="flex flex-col min-h-screen bg-emerald-100 " style={{ backgroundImage: `url('/Blog_1.jpg')` ,
-    backgroundAttachment: 'fixed'}}>
+    <div className="flex flex-col min-h-screen bg-emerald-100 bg-opacity-70 " style={{
+      backgroundImage: `url('/Blog_1.jpg')`,
+      backgroundAttachment: 'fixed'
+    }}>
       {showConfirm && <DeleteHandler
         onDelete={deleteSelectedStaff}
         onCancel={cancelConfirmHandler}
       ></DeleteHandler>}
       <Nav />
-
       <h1 className="text-5xl font-bold my-6 text-center text-zinc-50">User List</h1>
       <h2 className="text-3xl font-bold my-6 text-center text-zinc-50">Our success is a reflection of our team's hard work and dedication.</h2>
-
-      <div className=" grow grid grid-cols-1 xl:grid-cols-1 my-10 mx-auto justify-items-center gap-10 w-8/12 ">
-        <div className="overflow-auto w-full rounded p-2 my-4 " style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)' }}>
-          <table className="table table-compact w-full">
+      <div className="grid grid-cols-1 xl:grid-cols-1 my-10 mx-auto justify-items-center gap-10 w-8/12 ">
+        <div className="w-full my-4 overflow-auto p-1">
+          <table className="table table-compact w-full shadow-green rounded-[7px] ">
             <thead>
               {!isModalOpen && (
                 <tr>
                   <th
-                    className="w-[7%] bg-emerald-100 cursor-pointer hover:bg-blue-300"
+                    className="w-[7%] bg-emerald-100 bg-opacity-70 cursor-pointer hover:bg-blue-300"
+                    style={{ position: 'static' }}
                     onClick={() => handleSortClick("id")} >
                     <span>ID</span>
                     {sortColumn === 'id' && (
@@ -225,7 +225,7 @@ export default function StaffCRUD() {
                     )}
                   </th>
                   <th
-                    className="w-[25%] bg-emerald-100 cursor-pointer hover:bg-blue-300"
+                    className="w-[25%] bg-emerald-100 bg-opacity-70 cursor-pointer hover:bg-blue-300"
                     onClick={() => handleSortClick("email")} >
                     <span> Email </span>
                     {sortColumn === 'email' && (
@@ -233,44 +233,44 @@ export default function StaffCRUD() {
                     )}
                   </th>
                   <th
-                    className="w-[15%] bg-emerald-100 cursor-pointer hover:bg-blue-300"
+                    className="w-[15%] bg-emerald-100 bg-opacity-70 cursor-pointer hover:bg-blue-300"
                     onClick={() => handleSortClick("role")} >
                     <span> Role</span>
                     {sortColumn === 'role' && (
                       <span className="ml-2">{sortOrder === 'asc' ? '▲' : '▼'}</span>
                     )}
                   </th>
-                  <th className="w-[15%] bg-emerald-100 cursor-pointer hover:bg-blue-300" onClick={() => handleSortClick("phone")} >
+                  <th className="w-[15%] bg-emerald-100 bg-opacity-70 cursor-pointer hover:bg-blue-300" onClick={() => handleSortClick("phone")} >
                     <span> Phone </span>
                     {sortColumn === 'phone' && (
                       <span className="ml-2">{sortOrder === 'asc' ? '▲' : '▼'}</span>
                     )}
                   </th>
-                  <th className="w-[15%] bg-emerald-100 cursor-pointer hover:bg-blue-300" onClick={() => handleSortClick("firstName")} >
+                  <th className="w-[15%] bg-emerald-100 bg-opacity-70 cursor-pointer hover:bg-blue-300" onClick={() => handleSortClick("firstName")} >
                     <span> First Name </span>
                     {sortColumn === 'firstName' && (
                       <span className="ml-2">{sortOrder === 'asc' ? '▲' : '▼'}</span>
                     )}
                   </th>
-                  <th className="w-[15%] bg-emerald-100 cursor-pointer hover:bg-blue-300" onClick={() => handleSortClick("lastName")} >
+                  <th className="w-[15%] bg-emerald-100 bg-opacity-70 cursor-pointer hover:bg-blue-300" onClick={() => handleSortClick("lastName")} >
                     <span> Last Name </span>
                     {sortColumn === 'lastName' && (
                       <span className="ml-2">{sortOrder === 'asc' ? '▲' : '▼'}</span>
                     )}
                   </th>
-                  <th className="bg-emerald-100 " >Status</th>
+                  <th className="bg-emerald-100 bg-opacity-70 " >Status</th>
                 </tr>)}
             </thead>
-            <tbody>
+            <tbody className="overflow-y-auto">
               {staff.map((staff) => (
                 <tr key={staff.staff_id}>
-                  <td className="bg-emerald-100">{staff.staff_id}</td>
-                  <td className="bg-emerald-100">{staff.staff_email}</td>
-                  <td className="bg-emerald-100">{staff.staff_access_role}</td>
-                  <td className="bg-emerald-100">{staff.staff_phone}</td>
-                  <td className="bg-emerald-100">{staff.staff_first_name}</td>
-                  <td className="bg-emerald-100">{staff.staff_last_name}</td>
-                  <td className="bg-emerald-100">
+                  <td className="bg-emerald-100 bg-opacity-70">{staff.staff_id}</td>
+                  <td className="bg-emerald-100 bg-opacity-70">{staff.staff_email}</td>
+                  <td className="bg-emerald-100 bg-opacity-70">{staff.staff_access_role}</td>
+                  <td className="bg-emerald-100 bg-opacity-70">{staff.staff_phone}</td>
+                  <td className="bg-emerald-100 bg-opacity-70">{staff.staff_first_name}</td>
+                  <td className="bg-emerald-100 bg-opacity-70">{staff.staff_last_name}</td>
+                  <td className="bg-emerald-100 bg-opacity-70">
                     <button
                       className="btn btn-xs"
                       // onClick={() => setSelectedStaffID(staff.staff_id)}
@@ -285,16 +285,13 @@ export default function StaffCRUD() {
           </table>
         </div>
 
-
         {isModalOpen && (
           <div className="w-full rounded p-2 my-4
           fixed inset-0 bg-[#000] 
         text-3xl m-auto flex justify-evenly items-center z-10"
             style={{ position: "fixed" }}
             onClick={() => handleCloseModal()}>
-
             <div className="w-8/12" onClick={(e) => e.stopPropagation()}>
-
               <div className="form-control">
                 <label className="label">
                   <span className="label-text text-xl text-lime-500">ID:</span>
@@ -302,7 +299,7 @@ export default function StaffCRUD() {
                 <input
                   type="text"
                   readonly
-                  className="input input-bordered bg-emerald-100"
+                  className="input input-bordered bg-emerald-100 "
                   value={selectedStaff.staff_id}
                 />
               </div>
@@ -312,7 +309,7 @@ export default function StaffCRUD() {
                 </label>
                 <input
                   type="text"
-                  className="input input-bordered bg-emerald-100"
+                  className="input input-bordered bg-emerald-100 "
                   value={selectedStaff.staff_email}
                   onChange={(e) => {
                     setSelectedStaff({ ...selectedStaff, staff_email: e.target.value });
@@ -325,7 +322,7 @@ export default function StaffCRUD() {
                 </label>
                 <input
                   type="password"
-                  className="input input-bordered bg-emerald-100"
+                  className="input input-bordered bg-emerald-100 "
                   value={selectedStaff.staff_password}
                   onChange={(e) =>
                     setSelectedStaff({ ...selectedStaff, staff_password: e.target.value })
@@ -337,7 +334,7 @@ export default function StaffCRUD() {
                   <span className="label-text text-xl text-lime-500">Role:</span>
                 </label>
                 <select
-                  className="select select-bordered"
+                  className="select select-bordered bg-emerald-100"
                   value={selectedStaff.staff_access_role}
                   onChange={(e) =>
                     setSelectedStaff({ ...selectedStaff, staff_access_role: e.target.value })
@@ -351,14 +348,13 @@ export default function StaffCRUD() {
                 </select>
               </div>
 
-
               <div className="form-control">
                 <label className="label">
                   <span className="label-text text-xl text-lime-500">Phone:</span>
                 </label>
                 <input
                   type="text"
-                  className="input input-bordered bg-emerald-100"
+                  className="input input-bordered bg-emerald-100 "
                   value={selectedStaff.staff_phone}
                   onChange={(e) =>
                     setSelectedStaff({ ...selectedStaff, staff_phone: e.target.value })
@@ -371,7 +367,7 @@ export default function StaffCRUD() {
                 </label>
                 <input
                   type="text"
-                  className="input input-bordered bg-emerald-100"
+                  className="input input-bordered bg-emerald-100 "
                   value={selectedStaff.staff_first_name}
                   onChange={(e) =>
                     setSelectedStaff({ ...selectedStaff, staff_first_name: e.target.value })
@@ -384,7 +380,7 @@ export default function StaffCRUD() {
                 </label>
                 <input
                   type="text"
-                  className="input input-bordered bg-emerald-100"
+                  className="input input-bordered bg-emerald-100 "
                   value={selectedStaff.staff_last_name}
                   onChange={(e) =>
                     setSelectedStaff({ ...selectedStaff, staff_last_name: e.target.value })
@@ -397,14 +393,13 @@ export default function StaffCRUD() {
                 </label>
                 <input
                   type="text"
-                  className="input input-bordered bg-emerald-100"
+                  className="input input-bordered bg-emerald-100 "
                   value={selectedStaff.staff_address}
                   onChange={(e) =>
                     setSelectedStaff({ ...selectedStaff, staff_address: e.target.value })
                   }
                 />
               </div>
-
               <div className="pt-4 flex gap-2">
                 <button
                   className="btn btn-primary"
@@ -440,14 +435,11 @@ export default function StaffCRUD() {
                   Delete
                 </button>
               </div>
-
             </div>
-
-
-
-
           </div>
         )}
+      </div>
+      <div className="grow  ">
       </div>
       <Footer />
     </div>
